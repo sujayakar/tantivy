@@ -104,7 +104,7 @@ impl Bm25Weight {
         Bm25Weight::new(idf_explain, avg_fieldnorm)
     }
 
-    pub(crate) fn new(idf_explain: Explanation, average_fieldnorm: Score) -> Bm25Weight {
+    pub fn new(idf_explain: Explanation, average_fieldnorm: Score) -> Bm25Weight {
         let weight = idf_explain.value() * (1.0 + K1);
         Bm25Weight {
             idf_explain,
